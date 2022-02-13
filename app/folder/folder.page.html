@@ -1,0 +1,79 @@
+<ion-header [translucent]="false">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+     <!-- <ion-menu-button></ion-menu-button>-->
+    </ion-buttons>
+    <ion-title>Puanmatik</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-subtitle>Açıklama</ion-card-subtitle>
+ 
+    </ion-card-header>
+  
+    <ion-card-content>
+      Bu uygulama YKS hesaplama uygulamasıdır.
+      <br>
+      Aşağıda bulunan hesap butonlarına tıklayarak hesap yapabilirsiniz.
+      <br>
+      <img src="https://cdn4.iconfinder.com/data/icons/emoji-18/61/{{sonuc>300 ? '4':'8'}}-64.png">
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+<!--Netlerin giriş alanı-->
+
+
+
+<!--Mat Netlerin giriş alanı-->
+  <ion-range min="0" max="40" color="{{mat>20 ? 'primary':'danger'}}" [(ngModel)]="mat" (ngModelChange)="hesapla(mat,fen,sos,tur)">
+    <ion-label slot="start">Mat</ion-label>
+    <ion-label slot="end">{{mat}}Net</ion-label>
+  </ion-range>
+
+
+<!--Fen Netlerin giriş alanı-->
+<ion-range min="0" max="20" color="{{fen>10 ? 'primary':'danger'}}" [(ngModel)]="fen" (ngModelChange)="hesapla(mat,fen,sos,tur)">
+  <ion-label slot="start">Fen</ion-label>
+  <ion-label slot="end">{{fen}}Net</ion-label>
+</ion-range>
+
+
+
+<!--Sos Netlerin giriş alanı-->
+<ion-range min="0" max="20" color="{{sos>10 ? 'primary':'danger'}}"  [(ngModel)]="sos" (ngModelChange)="hesapla(mat,fen,sos,tur)">
+  <ion-label slot="start">Sos</ion-label>
+  <ion-label slot="end">{{sos}}Net</ion-label>
+</ion-range>
+
+
+
+
+<!--Fen Netlerin giriş alanı-->
+<ion-range min="0" max="40" color="{{tur>20 ? 'primary':'danger'}}" [(ngModel)]="tur" (ngModelChange)="hesapla(mat,fen,sos,tur)">
+  <ion-label slot="start">Tur</ion-label>
+  <ion-label slot="end">{{tur}}Net</ion-label>
+</ion-range>
+
+
+
+<ion-card color="dark" class="animate__animated {{sonuc>300 ? 'animate__jello':''}}">
+  <ion-card-header>
+    <ion-card-subtitle>{{sonuc>300 ? 'Süpersin':'Çalışmalısın'}}</ion-card-subtitle>
+    <ion-card-title>YKS {{sonuc}} puan</ion-card-title>
+  </ion-card-header>
+
+
+</ion-card>
+
+
+
+
+</ion-content>
